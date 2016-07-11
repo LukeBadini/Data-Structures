@@ -1,0 +1,22 @@
+  
+  
+  Luke Badini
+
+
+  Random: Based on the data, the equation for the trendline
+          for array accesses vs array length suggests that
+          for a random array, the Big-O runtime is
+          O(n^2).
+  
+  Identical: Since the number of array accesses is the same no matter
+             what the length of the array is, the worst-case runtime
+             for an array of identical numbers is O(1).
+  
+  Sorted: Since the number of array accesses is the same no matter
+          what the length of the array is, the worst-case runtime
+          for a sorted array is O(1).
+          
+  Reverse Sorted: Based on the data, the equation for the trendline
+                  for array accesses vs array length suggests that
+                  for a reverse-sorted array, the Big-O runtime is
+                  O(n^2).

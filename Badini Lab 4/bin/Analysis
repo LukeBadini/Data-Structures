@@ -1,0 +1,43 @@
+   Analysis
+ 
+   1. public void shuffle()
+	  {
+		int shuffleIndex = (deck.length - 1);
+		Random randomNumberGenerator = new Random();
+		int randomNumber;
+		Card swapper;
+		
+		while (shuffleIndex != 0)
+		{
+			randomNumber = randomNumberGenerator.nextInt(
+			shuffleIndex);
+				
+			swapper = deck[shuffleIndex];
+			deck[shuffleIndex] = deck[randomNumber];
+			deck[randomNumber] = swapper;
+			shuffleIndex--;
+			
+   The shuffle method used for this lab is more efficient because
+   it uses O(1) time while the one for Project 2 uses O(n) time.
+   
+   2. public Card deal()
+	  {			
+		if (dealIndex < (deck.length - 1))
+		{
+			dealIndex++;
+			return deck[dealIndex];
+		}
+		else
+		{
+			return null;
+		}
+	  }
+   
+   Both methods are equally efficient because both use O(1) time.
+   
+   3. a. In this case, toString would need to go through the deal
+         method since the cards are being shuffled while being 
+         dealt.
+      b. If you then dealt the cards after this, since the deck
+         is being shuffled every time, the toString card order 
+         would most likely be different from the deal card order.

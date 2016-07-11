@@ -1,0 +1,21 @@
+ Changes to Card Class:
+ 
+ - Added a setSuit method
+ - Fixed toString
+ 
+ 
+ 
+ Changes to Deck Class:
+ 
+ - Added a private deckNumber method which allows for the specification
+   of how many decks to use and returns how many cards there are
+ - Added a cardNumber instance variable
+ - Added a getCardNumber method
+ - Made fillDeck private and called it in the constructor
+ - Adjusted fillDeck with an additional for loop that allows for
+   multiple decks to be used (i.e 2 decks for Crazy Eights)
+ - Removed cardNumbers instance variable
+ - Adjusted various values from 52/51 to deck.length/(deck.length - 1)
+ - In the shuffle method, removed the shuffling boolean in favor of
+   changing the loop condition to while (shuffleIndex != 0)
+ - Fixed toString

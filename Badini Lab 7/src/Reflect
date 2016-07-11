@@ -1,0 +1,19 @@
+ 1. setStart and setEnd are specific to Events since Reminders
+    don't have a start time and an end time. As such, if we tried to
+    call setStart and setEnd on a Reminder LogEntry, we would run 
+    into an error. On the other hand, both Reminders and Events have
+    years, months, days, and we can represent them both as strings.
+    We can put these methods into the interface because all of these
+    methods work on both types of objects.
+ 
+ 2. It would not be a good design decision to put setStart and setEnd
+    inside the interface because it requires the user to keep track
+    of what is an Event and what is a Reminder. In order to fix this,
+    Reminders would need to be given a start time and an end time if
+    setStart and setEnd were inside the interface.
+    
+ 3. I had to object cast in my alteringEvents method because the
+    compiler thinks things inside the LogBook are of type LogEntry.
+    Since I know what I'm looking for is an Event, I needed to cast
+    the LogEntry object as an Event object to get the code to
+    compile.

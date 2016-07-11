@@ -1,0 +1,36 @@
+   Method 1: Considering for every type of array Method 1 has a 
+   			 linear trendline (meaning when input is increased by n,
+   			 runtime increases by n), the worst-case runtime for
+   			 this method is O(n).
+   
+   Method 2: For both sorted and reverse sorted arrays, Method 2
+             has a quadratic trendline (meaning when input is
+             increased by n, runtime increases by n^2). As such,
+             the worst-case runtime for this method is O(n^2).
+   
+   Method 3: For random arrays, Method 3 has a quadratic trendline
+             (meaning when input is increased by n, runtime
+             increases by n^2). As such, the worst-case runtime
+             for this method is O(n^2).
+   
+   Method 4: Considering for every type of array Method 4 has a 
+   			 quadratic trendline (meaning when input is increased by n,
+   			 runtime increases by n^2), the worst-case runtime for
+   			 this method is O(n^2).
+   
+   Method 5: Considering for every type of array Method 5 has a 
+   			 linear trendline (meaning when input is increased by n,
+   			 runtime increases by n), the worst-case runtime for
+   			 this method is O(n).
+   
+   Method 6: For both random and reverse sorted arrays, Method 6
+             has a quadratic trendline (meaning when input is
+             increased by n, runtime increases by n^2). As such,
+             the worst-case runtime for this method is O(n^2).
+             
+   Time vs. Operations: For every method, time vs. length was
+                        generally consistent with operations
+                        vs. length. The difference between them
+                        is based on the power and usage of my
+                        computer so it is better to evaluate
+                        runtime using # of operations.

@@ -1,0 +1,9 @@
+ 1. removeHead: O(1)
+    insertAtTail: O(n)
+    search: O(n)
+
+ 2. a. Instead of being O(1) time, removeHead would be O(n) time
+       because you would need to use a for loop to move everything
+       in the list 1 slot to the left.
+    b. The runtime would be the same because both cases still need
+       to iterate through the list in order to find the correct event.

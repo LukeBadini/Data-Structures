@@ -1,0 +1,18 @@
+Sequence Invariant:
+
+1. The number of elements in the
+   sequence is stored in the instance
+   variable manyItems
+
+2. For an empty sequence, we do not care
+   what is stored in any of data; for a
+   non-empty sequence, the elements of 
+   the sequence are stored from the front
+   to the end in data[0] to data[manyItems-1]
+   and we don't care what is stored in the
+   rest of data
+
+3. If there is a current element, then it
+   lies in data[currentIndex]; if there is
+   no current element, then currentIndex
+   equals -1

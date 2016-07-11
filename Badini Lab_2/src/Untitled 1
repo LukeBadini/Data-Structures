@@ -1,0 +1,29 @@
+1.
+The first line in the code creates a spot in memory for a DrawingBoard 
+object called myBoard. As of the first line, the value that this spot
+in memory points to is null. The second line of the code creates a new
+DrawingBox object in memory and points the myBoard spot in memory
+to that object. The third line calls the setVisible DrawingBox
+method on myBoard and passes the boolean true into it which makes
+myBoard visible. The final line calls the drawRect DrawingBox method
+on myBoard and passes 4 numbers into it. These represent the x value,
+y value, width, and height of the rectangle. These two methods are not
+being performed on the myBoard object itself, but the space in memory
+myBoard points to, which is a DrawingBoard object.
+
+2.
+The DrawingBox constructor is called in the second line. We knew it
+was legal to use the constructor method with no arguments because in
+the JavaDocs is says that it can take no arguments and returns a
+DrawingBox with the default title. DrawingBox can also accept 
+String arguments in which case it assigns the argument as the title
+of the DrawingBox.
+
+3.
+drawRect represents a method that can be called on DrawingBox objects.
+The first version of drawRect is being used because it takes 4 arguments
+while the second version takes 1 argument. The second version also takes
+Rectangle arguments while the first version takes integer arguments.
+In the first version, the arguments represent the x value, y value, 
+width, and height of the rectangle. In the second version, the argument
+represents a Rectangle object.

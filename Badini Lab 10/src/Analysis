@@ -1,0 +1,20 @@
+   
+   
+   1. The priorityQueueSort method has O(n) runtime because it
+      contains a for loop that iterates a number of times depending
+      on the input size (n). Inside that for loop, a couple of other
+      methods are called but they have O(1) runtime so the runtime
+      of the overall method remains O(n).
+   
+   2. If the priority queue was implemented using an unsorted linked
+      list, priorityQueueSort would have a runtime of O(n^2) because
+      the deleteRoot method in the heap class would need to iterate
+      through the linked list to find the root node. Because of
+      this, and also because both methods depend on the input size,
+      the priorityQueueSort method executes a for loop n times
+      and inside that for loops, the deleteRoot method iterates
+      through the linked list, in the worst case, n times.
+   
+   3. The loop variable starts at nodes/2 because that's the index
+      position where the first non-leaf node is located (in reverse
+      level-by-level order).

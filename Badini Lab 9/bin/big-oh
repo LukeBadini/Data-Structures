@@ -1,0 +1,25 @@
+   
+   size: The runtime for the size method is constant because when I
+         make a call to the LinkedList size method, no matter what
+         the size of the Stack is, there is only 1 line of code
+         being executed.
+   
+   isEmpty: The runtime for the isEmpty method is constant because
+            when I make a call to the LinkedList isEmpty method, no
+            matter what the size of the Stack is, there is only 1
+            line of code being executed.
+   
+   push: The runtime for the push method is constant because when I
+         make a call to the LinkedList insertAtHead method, no matter
+         what size the Stack is, there are only 4 line of code being
+         executed.
+   
+   pop: The runtime of the pop method is constant because when I
+        make a call to the LinkedList removeHead method, no matter
+        what size the Stack is, there are at most 4 lines of code
+        being executed.
+   
+   top: The runtime of the top method is constant because when I
+        make a call to the LinkedList elementAtHead method, no matter
+        what size the Stack is, there is only 1 line of code being
+        executed.
