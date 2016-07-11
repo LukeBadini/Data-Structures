@@ -1,0 +1,64 @@
+/**
+ * Stores information on a player and their hand
+ * 
+ * @author Luke Badini
+ * @version 4/20/2015
+ *
+ */
+import java.util.Scanner;
+
+public class Hand 
+{
+	private String playerName;
+	private Card[] playerHand;
+	private Deck deck;
+	private int handLength;
+	private Scanner keyboard = new Scanner(System.in);
+	
+	/**
+	 * Constructs a player's hand
+	 * 
+	 * @param aDeck; the shuffled deck being used for the game
+	 */
+	public Hand(Deck aDeck)
+	{
+		deck = aDeck;
+		askPlayerName();
+		playerHand = new Card[deck.getCardNumber()];
+		startingDeal();
+		System.out.print(playerName);
+	}
+	
+	/**
+	 * Asks for a player's name
+	 * 
+	 * @return player's name as a string
+	 */
+	private void askPlayerName()
+	{
+		System.out.print("Enter your name: ");
+		playerName = keyboard.nextLine();
+	}
+	
+	/**
+	 * Deals the player 7 cards to start their hand
+	 */
+	private void startingDeal()
+	{
+		for (int i = 0; i < 7; i++)
+		{
+			playerHand[i] = deck.deal();
+		}
+		handLength = 7;
+	}
+	
+	/**
+	 * Draws a card from the deck and puts
+	 * it into the player's hand
+	 */
+	public void drawCard()
+	{
+		playerHand[handLength] = deck.deal();
+		handLength++;		
+	}
+}

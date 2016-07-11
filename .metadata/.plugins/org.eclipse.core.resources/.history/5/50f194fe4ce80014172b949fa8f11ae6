@@ -1,0 +1,70 @@
+import java.util.Scanner;
+
+
+public class CrazyEights 
+{
+	private int playerNumber;
+	private Hand[] playerHands;
+	private Deck deck;
+	private Card[] faceUpCard;
+	private Scanner keyboard = new Scanner(System.in);
+	private final String rules = "Players are dealt 7 cards at the"
+			+ " beginning of the game and 1 card is dealt face-up."
+			+ " Players then take turns matching cards from their "
+			+ "hand to the face-up card by either their suit or value. "
+			+ "8s can be played as any value or suit and when an 8 is "
+			+ "played, the player declares the new suit of the card. "
+			+ "If a player cannot play a card, they must draw. The winner"
+			+ " is the first to discard their entire hand. In the event "
+			+ "of no moves being able to be played, the game is "
+			+ "considered a draw.";
+	
+	public CrazyEights()
+	{
+		System.out.println(rules);
+		
+		askPlayerNumber();
+		deck = new Deck();
+		deck.shuffle();
+		playerHands = new Hand[playerNumber];
+		
+		for (int i = 0; i < playerNumber; i++)
+		{
+			playerHands[i] = new Hand(deck);
+		}
+		
+		faceUpCard = new Card[1];
+		dealCard();
+	}
+	
+	/**
+	 * Asks for how many players there are.
+	 */
+	private void askPlayerNumber()
+	{
+		System.out.print("How many players? ");
+		playerNumber = keyboard.nextInt();
+		
+		if (playerNumber < 2 || playerNumber > 10)
+		{
+			System.out.println("Invalid number of players.");
+			askPlayerNumber();
+		}
+	}
+	
+	/**
+	 * Deals a card from the deck to the face-up pile
+	 */
+	private void dealCard()
+	{
+		faceUpCard[0] = deck.deal();
+	}
+	
+	/**
+	 * Plays a game of Crazy Eights
+	 */
+	public void playGame()
+	{
+		
+	}
+}

@@ -1,0 +1,106 @@
+/**
+ * Stores information on a player and their hand
+ * 
+ * @author Luke Badini
+ * @version 4/20/2015
+ *
+ */
+import java.util.Scanner;
+
+public class Hand 
+{
+	private String playerName;
+	private Card[] playerHand;
+	private Deck deck;
+	private int handLength;
+	private Scanner keyboard = new Scanner(System.in);
+	
+	/**
+	 * Constructs a player's hand
+	 * 
+	 * @param aDeck; the shuffled deck being used for the game
+	 */
+	public Hand(Deck aDeck)
+	{
+		deck = aDeck;
+		askPlayerName();
+		playerHand = new Card[deck.getCardNumber()];
+		startingDeal();
+	}
+	
+	/**
+	 * Asks for a player's name
+	 */
+	private void askPlayerName()
+	{
+		System.out.print("Enter your name: ");
+		playerName = keyboard.nextLine();
+	}
+	
+	/**
+	 * Deals the player 7 cards to start their hand
+	 */
+	private void startingDeal()
+	{
+		for (int i = 0; i < 7; i++)
+		{
+			playerHand[i] = deck.deal();
+		}
+		handLength = 7;
+	}
+	
+	/**
+	 * Draws a card from the deck and puts
+	 * it into the player's hand
+	 */
+	public void drawCard()
+	{
+		playerHand[handLength] = deck.deal();
+		handLength++;		
+	}
+	
+	/**
+	 * Removes a card from the player's hand
+	 * @return the Card object removed
+	 */
+	public Card removeCard(int cardNumber)
+	{
+		handLength--;
+		Card cardRemoved = playerHand[cardNumber];
+		playerHand[cardNumber] = playerHand[handLength];
+		
+		return cardRemoved;
+	}
+	
+	/**
+	 * Finds a card from the player's hand
+	 * @return the Card object found
+	 */
+	public Card seekCard(int cardNumber)
+	{
+		return playerHand[cardNumber];
+	}
+	
+	/**
+	 * Prints the player's hand as a string
+	 */
+	public void handToString()
+	{
+		System.out.println(playerName + "'s hand");
+		System.out.println("----------");
+				
+		for (int i = 0; i < handLength; i++)
+		{
+			System.out.print(i + ") ");
+			playerHand[i].cardToString();
+		}
+	}
+	
+	/**
+	 * Returns the player's name
+	 */
+	public String getPlayerName()
+	{
+		return playerName;
+	}
+}

@@ -1,0 +1,124 @@
+/**
+ * Generates a deck comprised of an array of Card objects.
+ * 
+ * @author Luke Badini
+ * @version 4/20/2015
+ *
+ */
+
+import java.util.Random;
+
+public class Deck 
+{
+	private Card[] deck;
+	private int dealIndex;
+	private int generatorIndex;
+	private int cardNumber;
+	
+	/**
+	 * Deck constructor
+	 */
+	public Deck()
+	{
+		cardNumber = deckNumber(2);
+		deck = new Card[cardNumber];
+		generatorIndex = 0;
+		dealIndex = -1;
+		fillDeck();
+	}
+	
+	/**
+	 * Specifies how many decks are being used
+	 * 
+	 * @param number; number of decks being used
+	 * @return how many cards are being used
+	 */
+	public int deckNumber(int number)
+	{
+		return (number * 52);
+	}
+	
+	/**
+	 * Fills the deck with card objects
+	 */
+	private void fillDeck()
+	{
+		String[] suitArray = {"heart", "diamond", "spade", "club"};
+		Card aCard;
+		// If the deck length is not divisible by 52,
+		// the deck will fill a number of times rounded down
+		// (e.g. if deck.length is 70, it will be filled with
+		//  52 cards)
+		int numberOfDecks = (deck.length/52);
+		
+		for (int i = 0; i < numberOfDecks; i++)
+		{
+			for (String suit: suitArray)
+			{
+				for (int value = 1; value <= 13; value++)
+				{
+					aCard = new Card(suit, value);
+					deck[generatorIndex] = aCard;
+					generatorIndex++;
+				}
+			}
+		}
+	}
+	
+	/**
+	 * Returns the next dealt card in the deck.
+	 * If the deck is empty, returns null.
+	 */
+	public Card deal()
+	{			
+		if (dealIndex < (deck.length - 1))
+		{
+			dealIndex++;
+			return deck[dealIndex];
+		}
+		else
+		{
+			return null;
+		}
+	}
+	
+	/**
+	 * Shuffles the deck array from back to front.
+	 */
+	public void shuffle()
+	{
+		int shuffleIndex = (deck.length - 1);
+		Random randomNumberGenerator = new Random();
+		int randomNumber;
+		Card swapper;
+		
+		while (shuffleIndex != 0)
+		{
+			randomNumber = randomNumberGenerator.nextInt(shuffleIndex);
+				
+			swapper = deck[shuffleIndex];
+			deck[shuffleIndex] = deck[randomNumber];
+			deck[randomNumber] = swapper;
+			shuffleIndex--;
+		}
+	}
+	
+	/**
+	 * Returns the number of decks being used
+	 */
+	public int getCardNumber()
+	{
+		return cardNumber;
+	}
+	
+	/**
+	 * Prints every card in the deck as a string.
+	 */
+	public void deckToString()
+	{
+		for (Card card: deck)
+		{
+			System.out.println(card);
+		}
+	}
+}

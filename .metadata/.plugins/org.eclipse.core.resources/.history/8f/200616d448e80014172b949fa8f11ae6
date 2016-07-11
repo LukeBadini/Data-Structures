@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+
+public class CrazyEights 
+{
+	private int playerNumber;
+	private Hand[] playerHands;
+	private Deck deck;
+	private Card[] faceUpCard;
+	private Scanner keyboard = new Scanner(System.in);
+	
+	public CrazyEights()
+	{
+		askPlayerNumber();
+		deck = new Deck();
+		deck.shuffle();
+		playerHands = new Hand[playerNumber];
+		
+		for (int i = 0; i < playerNumber; i++)
+		{
+			playerHands[i] = new Hand(deck);
+		}
+		
+	}
+	
+	/**
+	 * Asks for how many players there are
+	 */
+	private void askPlayerNumber()
+	{
+		System.out.print("How many players? ");
+		playerNumber = keyboard.nextInt();
+		
+		if (playerNumber < 2 || playerNumber > 10)
+		{
+			askPlayerNumber();
+		}
+	}
+}
